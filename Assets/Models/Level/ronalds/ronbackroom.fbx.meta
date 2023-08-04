@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: doanldbackroom
-    second: {fileID: 2800000, guid: 877a79d3e8d73264bbeff1b1e7c7b9d9, type: 3}
+    second: {fileID: 2800000, guid: fd97bc63892ba2040a52c4e6317328a0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

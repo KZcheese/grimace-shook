@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: mallwall
-    second: {fileID: 2800000, guid: cb78ac7b6635ea146825014cb31df381, type: 3}
+    second: {fileID: 2800000, guid: 83964cb7a9e8f47438a104b7f3cfc5f2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

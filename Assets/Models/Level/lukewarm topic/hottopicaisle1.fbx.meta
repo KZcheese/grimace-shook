@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: htaisle1
-    second: {fileID: 2800000, guid: 1b55143aa439d3e4db1154a6f891ec5f, type: 3}
+    second: {fileID: 2800000, guid: 591699afd59299042aeeb8315ef86307, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
