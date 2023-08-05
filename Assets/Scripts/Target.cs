@@ -1,30 +1,24 @@
+using System.Collections;
 using UnityEngine;
 
 public class Target : MonoBehaviour
 {
     public float health = 50f;
+    public float deadTime = 5f;
+    public Rigidbody body;
 
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if(health <= 0f) Die();
+        if(health <= 0f) StartCoroutine(Die());
     }
 
-
-    private void Die()
+    private IEnumerator Die()
     {
+        body.constraints = RigidbodyConstraints.None;
+
+        yield return new WaitForSeconds(deadTime);
+
         Destroy(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

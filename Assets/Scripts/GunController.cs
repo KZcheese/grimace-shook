@@ -7,7 +7,7 @@ public class GunController : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
     public int maxAmmo = 10;
-    private int _currentAmmo;
+    protected int CurrentAmmo;
     public float fireRate = 0.1f;
     public float reloadTime = 1f;
     private bool _isReloading;
@@ -27,7 +27,7 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
-        _currentAmmo = maxAmmo;
+        CurrentAmmo = maxAmmo;
         _idleSprite = gunRenderer.sprite;
     }
 
@@ -37,15 +37,15 @@ public class GunController : MonoBehaviour
         if(input.reload && !_isReloading) StartCoroutine(Reload());
     }
 
-    private IEnumerator Fire()
+    protected virtual IEnumerator Fire()
     {
-        if(_currentAmmo < 1) yield break;
+        if(CurrentAmmo < 1) yield break;
 
         input.shoot = false;
 
         // muzzleFlash.Play();
         gunRenderer.sprite = shootingSprite;
-        _currentAmmo--;
+        CurrentAmmo--;
 
 
         Transform camTransform = gunCam.transform;
@@ -62,18 +62,23 @@ public class GunController : MonoBehaviour
 
         yield return new WaitForSeconds(fireRate);
 
-        gunRenderer.sprite = _currentAmmo < 1 ? emptySprite : _idleSprite;
+        SetIdleSprite();
+    }
+
+    protected virtual void SetIdleSprite()
+    {
+        gunRenderer.sprite = CurrentAmmo < 1 ? emptySprite : _idleSprite;
     }
 
     private IEnumerator Reload()
     {
         gunRenderer.sprite = reloadingSprite;
         _isReloading = true;
-        
+
         yield return new WaitForSeconds(reloadTime);
-        
+
         gunRenderer.sprite = _idleSprite;
-        _currentAmmo = maxAmmo;
+        CurrentAmmo = maxAmmo;
         _isReloading = false;
         input.reload = false;
         input.shoot = false;
