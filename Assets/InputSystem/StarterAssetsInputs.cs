@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace InputSystem
 {
@@ -8,7 +9,7 @@ namespace InputSystem
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
-		public float weaponSwitch;
+		public float switchWeapon;
 		public bool jump;
 		public bool sprint;
 		public bool shoot;
@@ -35,7 +36,7 @@ namespace InputSystem
 			}
 		}
 
-		public void OnChangeWeapon(InputValue value)
+		public void OnSwitch(InputValue value)
 		{
 			SwitchInput(value.Get<float>());
 		}
@@ -75,7 +76,7 @@ namespace InputSystem
 
 		public void SwitchInput(float newSwitchState)
 		{
-			weaponSwitch = newSwitchState;
+			switchWeapon = newSwitchState;
 		}
 
 		public void JumpInput(bool newJumpState)

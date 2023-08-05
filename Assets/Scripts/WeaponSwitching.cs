@@ -17,20 +17,25 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(input.weaponSwitch);
-        switch (input.weaponSwitch)
-        {
-            case > 0f:
-                selectedWeapon++;
-                selectedWeapon %= transform.childCount - 1;
-                SelectWeapon();
-                break;
+        if(input.switchWeapon.Equals(0)) return;
 
-            case < 0f:
-                selectedWeapon--;
-                if(selectedWeapon < 0) selectedWeapon += transform.childCount - 1;
-                SelectWeapon();
-                break;
+        ChangeWeapon(input.switchWeapon > 0);
+        SelectWeapon();
+    }
+
+    private void ChangeWeapon(bool up)
+    {
+        int numWeapons = transform.childCount;
+
+        if(up)
+        {
+            selectedWeapon++;
+            selectedWeapon %= numWeapons;
+        }
+        else
+        {
+            selectedWeapon--;
+            if(selectedWeapon < 0) selectedWeapon += numWeapons;
         }
     }
 
