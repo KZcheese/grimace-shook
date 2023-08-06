@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class PlayerManager : MonoBehaviour
         {
             if(++_collectedItems >= numItems)
             {
-                Debug.Log("WIN!");
+                SceneManager.LoadScene("WinScreen");
             }
         }
     }
@@ -37,6 +38,6 @@ public class PlayerManager : MonoBehaviour
 
     private static void Die()
     {
-        Debug.Log("Game Over!");
+        SceneManager.LoadScene("GameOver");
     }
 }
