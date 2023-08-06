@@ -4,7 +4,8 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
-    public float deadTime = 5f;
+    public float deadTime = 1f;
+    protected bool Dead;
     public Rigidbody body;
 
     public void TakeDamage(float amount)
@@ -13,8 +14,9 @@ public class Target : MonoBehaviour
         if(health <= 0f) StartCoroutine(Die());
     }
 
-    private IEnumerator Die()
+    protected virtual IEnumerator Die()
     {
+        Dead = true;
         body.constraints = RigidbodyConstraints.None;
 
         yield return new WaitForSeconds(deadTime);

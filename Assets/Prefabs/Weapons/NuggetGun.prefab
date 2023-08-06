@@ -102,7 +102,8 @@ MonoBehaviour:
   maxAmmo: 5
   fireRate: 1
   reloadTime: 1
-  projectilePrefab: {fileID: 513964066074206342}
+  projectilePrefab: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
+    type: 3}
   shotForce: 50
   input: {fileID: 0}
   gunRenderer: {fileID: 667375535861547077}
@@ -248,7 +249,7 @@ PrefabInstance:
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.88
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
@@ -263,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9914449
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
@@ -273,7 +274,7 @@ PrefabInstance:
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.13052624
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
@@ -288,7 +289,7 @@ PrefabInstance:
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
@@ -300,12 +301,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc05ce3d796e62741a5943a30129f674, type: 3}
---- !u!1 &513964066074206342 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
-    type: 3}
-  m_PrefabInstance: {fileID: 6979627425970907002}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &656948381595521911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,

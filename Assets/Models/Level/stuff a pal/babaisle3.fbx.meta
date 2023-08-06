@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: babaisle3
-    second: {fileID: 2800000, guid: 24aa731114bfd234aa5a8c202f4c0e55, type: 3}
+    second: {fileID: 2800000, guid: 39dd587847b9b8f4a9699364e29eb78f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

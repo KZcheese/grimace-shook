@@ -32,6 +32,20 @@ public class GunController : MonoBehaviour
     {
         CurrentAmmo = maxAmmo;
         _idleSprite = gunRenderer.sprite;
+        ResetWeapon();
+    }
+
+    private void OnEnable()
+    {
+        ResetWeapon();
+    }
+
+    private void ResetWeapon()
+    {
+        input.shoot = false;
+        input.reload = false;
+        _isFiring = false;
+        _isReloading = false;
     }
 
     private void Update()
@@ -55,8 +69,8 @@ public class GunController : MonoBehaviour
         gunRenderer.sprite = shootingSprite;
         CurrentAmmo--;
 
-        GameObject nugget = Instantiate(projectilePrefab, gunTip.position, transform.rotation);
-        Rigidbody rb = nugget.GetComponent<Rigidbody>();
+        GameObject projectile = Instantiate(projectilePrefab, gunTip.position, gunTip.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shotForce, ForceMode.VelocityChange);
 
         yield return new WaitForSeconds(fireRate);
