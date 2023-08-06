@@ -1,10 +1,12 @@
 using InputSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon;
     public StarterAssetsInputs input;
+    public Image cursorImage;
 
     // Start is called before the first frame update
     private void Start()
@@ -42,6 +44,13 @@ public class WeaponSwitching : MonoBehaviour
         int i = 0;
         foreach (Transform weapon in transform)
         {
+            if(i == selectedWeapon)
+            {
+                GunController weaponController = weapon.GetComponent<GunController>();
+                if(weaponController)
+                    cursorImage.sprite = weaponController.cursor;
+            }
+
             weapon.gameObject.SetActive(i++ == selectedWeapon);
         }
     }

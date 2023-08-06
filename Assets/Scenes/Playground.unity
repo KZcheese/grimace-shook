@@ -1554,6 +1554,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5817654054745710944, guid: 1de8543bda1cc2c4a9d3208804dbad08,
         type: 3}
+      propertyPath: cursorImage
+      value: 
+      objectReference: {fileID: 762105050}
+    - target: {fileID: 5817654054745710944, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+        type: 3}
       propertyPath: selectedWeapon
       value: 0
       objectReference: {fileID: 0}

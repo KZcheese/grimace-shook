@@ -113,6 +113,7 @@ MonoBehaviour:
   audioSource: {fileID: 7858641069783459547}
   emptySound: {fileID: 8300000, guid: 34c73bfd2b33a134c9199cc7120c9396, type: 3}
   reloadSound: {fileID: 8300000, guid: be7624da6a2b2914896b3e313a056171, type: 3}
+  cursor: {fileID: 21300000, guid: f26c713623f907e4eb302954471ca872, type: 3}
   fourShots: {fileID: 21300000, guid: e191e6082ffda6b48a83d59c28a1bfb4, type: 3}
   threeShots: {fileID: 21300000, guid: cf9aaa32e34a27b4ca344063a0ac5825, type: 3}
   twoShots: {fileID: 21300000, guid: 989ad5a34cae9e941b3f4ce8ba595eb7, type: 3}

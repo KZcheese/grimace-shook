@@ -26,6 +26,7 @@ public class GunController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip emptySound;
     public AudioClip reloadSound;
+    public Sprite cursor;
 
     private void Start()
     {
