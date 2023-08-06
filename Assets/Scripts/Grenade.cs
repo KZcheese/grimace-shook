@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,8 +6,9 @@ public class Grenade : MonoBehaviour
 {
     public float delay = 3;
     public float radius = 5f;
-    public float force = 700f;
+    public float force = 50f;
     public float damage = 50;
+    public bool explodeOnImpact = true;
 
     private float _countdown;
 
@@ -32,6 +34,11 @@ public class Grenade : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter()
+    {
+        if(explodeOnImpact) _countdown = 0;
+    }
+
     private IEnumerator Explode()
     {
         nuggetRenderer.sprite = explosionSprite;
@@ -41,11 +48,11 @@ public class Grenade : MonoBehaviour
 
         foreach (Collider nearbyObject in colliders)
         {
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if(rb) rb.AddExplosionForce(force, transform.position, radius);
-
             Target target = nearbyObject.transform.GetComponent<Target>();
             if(target) target.TakeDamage(damage);
+            
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if(rb) rb.AddExplosionForce(force, transform.position, radius);
         }
 
         // Debug.Log("BOOM!");

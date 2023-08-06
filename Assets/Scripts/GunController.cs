@@ -33,20 +33,18 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
-        if(input.shoot) StartCoroutine(Fire());
+        if(input.shoot && !_isReloading) StartCoroutine(Fire());
         if(input.reload && !_isReloading) StartCoroutine(Reload());
+        input.shoot = false;
+        input.reload = false;
     }
 
     protected virtual IEnumerator Fire()
     {
         if(CurrentAmmo < 1) yield break;
 
-        input.shoot = false;
-
-        // muzzleFlash.Play();
         gunRenderer.sprite = shootingSprite;
         CurrentAmmo--;
-
 
         Transform camTransform = gunCam.transform;
         if(!Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, range))
@@ -80,7 +78,5 @@ public class GunController : MonoBehaviour
         gunRenderer.sprite = _idleSprite;
         CurrentAmmo = maxAmmo;
         _isReloading = false;
-        input.reload = false;
-        input.shoot = false;
     }
 }
