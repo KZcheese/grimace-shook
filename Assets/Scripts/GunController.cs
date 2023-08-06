@@ -22,7 +22,9 @@ public class GunController : MonoBehaviour
     public Sprite reloadingSprite;
     public Sprite emptySprite;
     public Transform gunTip;
-
+    public AudioSource audioSource;
+    public AudioClip emptySound;
+    public AudioClip reloadSound;
 
     private void Start()
     {
@@ -40,11 +42,15 @@ public class GunController : MonoBehaviour
 
     private IEnumerator Fire()
     {
-        if(CurrentAmmo < 1) yield break;
+        if(CurrentAmmo < 1)
+        {
+            audioSource.PlayOneShot(emptySound);
+            yield break;
+        }
 
         gunRenderer.sprite = shootingSprite;
         CurrentAmmo--;
-        
+
         GameObject nugget = Instantiate(projectilePrefab, gunTip.position, transform.rotation);
         Rigidbody rb = nugget.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shotForce, ForceMode.VelocityChange);
@@ -61,6 +67,7 @@ public class GunController : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        audioSource.PlayOneShot(reloadSound);
         gunRenderer.sprite = reloadingSprite;
         _isReloading = true;
 

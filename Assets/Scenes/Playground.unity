@@ -1543,6 +1543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4129318105560712380, guid: 1de8543bda1cc2c4a9d3208804dbad08,
         type: 3}
+      propertyPath: gunTip
+      value: 
+      objectReference: {fileID: 595835856506932807}
+    - target: {fileID: 4129318105560712380, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+        type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
@@ -1624,6 +1629,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de8543bda1cc2c4a9d3208804dbad08, type: 3}
+--- !u!4 &595835856506932807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 276392950273710990, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+    type: 3}
+  m_PrefabInstance: {fileID: 595835856506932806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &627438804908087250
 PrefabInstance:
   m_ObjectHideFlags: 0

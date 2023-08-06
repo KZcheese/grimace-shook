@@ -110,6 +110,9 @@ MonoBehaviour:
   reloadingSprite: {fileID: 21300000, guid: d80f8e9efb2e0b4418004b7c6c5a4e89, type: 3}
   emptySprite: {fileID: 21300000, guid: 26f85f4d34dd526428b08025ca525cdd, type: 3}
   gunTip: {fileID: 6255823532011100181}
+  audioSource: {fileID: 3464193745859250908}
+  emptySound: {fileID: 8300000, guid: 952ca3d7990d7e542934faad1afd6360, type: 3}
+  reloadSound: {fileID: 8300000, guid: be7624da6a2b2914896b3e313a056171, type: 3}
 --- !u!82 &3464193745859250908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -121,7 +124,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4086262682650346211, guid: 356f84c25ab9d9e47b667ace2157cfd5,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 952ca3d7990d7e542934faad1afd6360, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

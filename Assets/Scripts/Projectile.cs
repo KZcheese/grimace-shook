@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour
     public SpriteRenderer projectileRenderer;
     public Sprite explosionSprite;
     public Rigidbody projectileBody;
+    public AudioSource audioSource;
+    public AudioClip impactSound;
 
     // Start is called before the first frame update
     private void Start()
@@ -55,6 +57,7 @@ public class Projectile : MonoBehaviour
         }
 
         // Debug.Log("BOOM!");
+        audioSource.PlayOneShot(impactSound);
         projectileBody.constraints = RigidbodyConstraints.FreezeAll;
 
         yield return new WaitForSeconds(0.5f);
