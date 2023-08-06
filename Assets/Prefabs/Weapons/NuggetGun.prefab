@@ -98,26 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d0e402568c47b4cb5520c8f3458858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  range: 100
   maxAmmo: 5
   fireRate: 0.5
   reloadTime: 2
-  gunCam: {fileID: 0}
+  projectilePrefab: {fileID: 513964066074206342}
+  shotForce: 40
   input: {fileID: 0}
-  impactEffect: {fileID: 7099539243237391877, guid: 496881c5b331cbf44ae03e9ec5d9c6a4,
-    type: 3}
   gunRenderer: {fileID: 667375535861547077}
   shootingSprite: {fileID: 21300000, guid: 14b97b0693a459649a877c84c2e88892, type: 3}
   reloadingSprite: {fileID: 21300000, guid: 96989df6c83900944b7c3e067399073a, type: 3}
   emptySprite: {fileID: 21300000, guid: 4ec158b93b16a0b4b88994600208234e, type: 3}
+  gunTip: {fileID: 656948381595521911}
   fourShots: {fileID: 21300000, guid: e191e6082ffda6b48a83d59c28a1bfb4, type: 3}
   threeShots: {fileID: 21300000, guid: cf9aaa32e34a27b4ca344063a0ac5825, type: 3}
   twoShots: {fileID: 21300000, guid: 989ad5a34cae9e941b3f4ce8ba595eb7, type: 3}
   oneShots: {fileID: 21300000, guid: dae48bd34908bc0498f7a69879dde56c, type: 3}
-  throwForce: 40
-  nuggetPrefab: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
-    type: 3}
 --- !u!1001 &6979627425970907002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,15 +138,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nugget
       objectReference: {fileID: 0}
-    - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
+    - target: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
-      propertyPath: m_LocalPosition.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,
         type: 3}
@@ -198,6 +198,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc05ce3d796e62741a5943a30129f674, type: 3}
+--- !u!1 &513964066074206342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
+    type: 3}
+  m_PrefabInstance: {fileID: 6979627425970907002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &656948381595521911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7620492134010139661, guid: cc05ce3d796e62741a5943a30129f674,

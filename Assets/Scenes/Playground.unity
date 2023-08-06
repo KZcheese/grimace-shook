@@ -1541,11 +1541,28 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4129318105560712380, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7493261569786824700, guid: cc05ce3d796e62741a5943a30129f674,
+        type: 3}
     - target: {fileID: 5817654054745710944, guid: 1de8543bda1cc2c4a9d3208804dbad08,
         type: 3}
       propertyPath: selectedWeapon
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7032796012909356987, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+        type: 3}
+      propertyPath: shotForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032796012909356987, guid: 1de8543bda1cc2c4a9d3208804dbad08,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8145589066360253787, guid: a1f418a1876b2814085adef29b21263d,
+        type: 3}
     - target: {fileID: 7328408557554930281, guid: 1de8543bda1cc2c4a9d3208804dbad08,
         type: 3}
       propertyPath: m_Name

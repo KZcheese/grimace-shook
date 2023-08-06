@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 100f;
     public int maxAmmo = 10;
     protected int CurrentAmmo;
     public float fireRate = 0.1f;
     public float reloadTime = 1f;
     private bool _isReloading;
 
-    public Camera gunCam;
+    public GameObject projectilePrefab;
+    public float shotForce = 40f;
 
     public StarterAssetsInputs input;
 
     // public ParticleSystem muzzleFlash;
-    public GameObject impactEffect;
     public SpriteRenderer gunRenderer;
     private Sprite _idleSprite;
     public Sprite shootingSprite;
     public Sprite reloadingSprite;
     public Sprite emptySprite;
+    public Transform gunTip;
 
 
     private void Start()
@@ -39,24 +38,16 @@ public class GunController : MonoBehaviour
         input.reload = false;
     }
 
-    protected virtual IEnumerator Fire()
+    private IEnumerator Fire()
     {
         if(CurrentAmmo < 1) yield break;
 
         gunRenderer.sprite = shootingSprite;
         CurrentAmmo--;
-
-        Transform camTransform = gunCam.transform;
-        if(!Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, range))
-            yield break;
-
-        // Debug.Log(hit.transform.name);
-
-        GameObject impact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impact, 2f);
-
-        Target target = hit.transform.GetComponent<Target>();
-        if(target) target.TakeDamage(damage);
+        
+        GameObject nugget = Instantiate(projectilePrefab, gunTip.position, transform.rotation);
+        Rigidbody rb = nugget.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * shotForce, ForceMode.VelocityChange);
 
         yield return new WaitForSeconds(fireRate);
 
