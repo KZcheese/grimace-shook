@@ -9,6 +9,7 @@ public class GunController : MonoBehaviour
     public float fireRate = 0.1f;
     public float reloadTime = 1f;
     private bool _isReloading;
+    private bool _isFiring;
 
     public GameObject projectilePrefab;
     public float shotForce = 40f;
@@ -34,7 +35,7 @@ public class GunController : MonoBehaviour
 
     private void Update()
     {
-        if(input.shoot && !_isReloading) StartCoroutine(Fire());
+        if(input.shoot && !_isReloading && !_isFiring) StartCoroutine(Fire());
         if(input.reload && !_isReloading) StartCoroutine(Reload());
         input.shoot = false;
         input.reload = false;
@@ -48,6 +49,8 @@ public class GunController : MonoBehaviour
             yield break;
         }
 
+        _isFiring = true;
+
         gunRenderer.sprite = shootingSprite;
         CurrentAmmo--;
 
@@ -58,6 +61,7 @@ public class GunController : MonoBehaviour
         yield return new WaitForSeconds(fireRate);
 
         SetIdleSprite();
+        _isFiring = false;
     }
 
     protected virtual void SetIdleSprite()

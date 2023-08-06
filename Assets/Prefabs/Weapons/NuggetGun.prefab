@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 5
-  fireRate: 0.5
-  reloadTime: 2
+  fireRate: 1
+  reloadTime: 1
   projectilePrefab: {fileID: 513964066074206342}
-  shotForce: 40
+  shotForce: 50
   input: {fileID: 0}
   gunRenderer: {fileID: 667375535861547077}
   shootingSprite: {fileID: 21300000, guid: 14b97b0693a459649a877c84c2e88892, type: 3}

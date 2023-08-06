@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 10
   fireRate: 0.1
-  reloadTime: 1
+  reloadTime: 0.5
   projectilePrefab: {fileID: 6214424796843884615}
-  shotForce: 40
+  shotForce: 1
   input: {fileID: 0}
   gunRenderer: {fileID: 1994142108507803710}
   shootingSprite: {fileID: 21300000, guid: b11f7ba9d2032234b8662da60298b047, type: 3}
@@ -218,6 +218,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 611016731748508311}
     m_Modifications:
+    - target: {fileID: 1346695151976763371, guid: a1f418a1876b2814085adef29b21263d,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692223604749674485, guid: a1f418a1876b2814085adef29b21263d,
+        type: 3}
+      propertyPath: force
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8145589066360253787, guid: a1f418a1876b2814085adef29b21263d,
         type: 3}
       propertyPath: m_Name
